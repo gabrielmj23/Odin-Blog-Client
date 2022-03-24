@@ -34,8 +34,7 @@ function CommentInput() {
         setContent('');
         setErorrs([]);
         window.location.reload(false);
-      }
-      else {
+      } else {
         // Add errors to state
         setErorrs(data.errors);
       }
@@ -51,7 +50,7 @@ function CommentInput() {
   }
 
   return (
-    <form className='form-control' onSubmit={e => {handleSubmit(e)}}>
+    <form className='form-control p-3' onSubmit={e => {handleSubmit(e)}}>
       <div className='form-group mb-3'>
         <label htmlFor='author'>Name: </label><br/>
         <input 
@@ -59,6 +58,9 @@ function CommentInput() {
           type='text' 
           placeholder='Your name' 
           name='author'
+          style={{
+            width: '40%'
+          }}
           onChange={e => setAuthor(e.target.value)}
           value={author}
         />
@@ -69,6 +71,9 @@ function CommentInput() {
           id='content' 
           type='text' 
           name='content'
+          style={{
+            width: '100%'
+          }}
           onChange={e => setContent(e.target.value)}
           value={content}
         ></textarea>
@@ -76,8 +81,8 @@ function CommentInput() {
       <button className='btn btn-primary' type='submit'>Submit</button>
       <ul>
         {errors.length > 0 && 
-          errors.map(error => (
-            <li className='text-danger'>{error.msg}</li>
+          errors.map((error, index) => (
+            <li className='text-danger' key={index}>{error.msg}</li>
           ))
         }
       </ul>

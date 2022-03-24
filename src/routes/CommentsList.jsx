@@ -2,7 +2,7 @@ import CommentInput from "./CommentInput";
 
 function CommentsList(props) {
   return (
-    <div className='bg-light rounded p-3'>
+    <div className='bg-light rounded p-3 mb-3'>
       <h5 className='fw-bold'>Comments</h5>
       <hr></hr>
       <p><strong>Add a comment</strong></p>
