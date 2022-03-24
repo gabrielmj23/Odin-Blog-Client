@@ -18,7 +18,7 @@ ReactDOM.render(
           <Route index element={
             <main> <PostsList /> </main>
           } />
-          <Route path='/posts/:postId' element={<Post />} />
+          <Route path='/posts/:postId' element={<main> <Post /> </main>} />
           <Route path='*' element={
             <main className='mt-5 text-center'>
               <h4>There's nothing here.</h4>

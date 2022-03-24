@@ -36,8 +36,8 @@ function ListGroup(props) {
 }
 
 function PostsList() {
-  const [data, setData] = useState('');
   const [status, setStatus] = useState('');
+  const [data, setData] = useState('');
 
   useEffect(() => {
     // Fetch posts from API
@@ -50,6 +50,8 @@ function PostsList() {
           mode: 'cors'
         });
         const data = await response.json();
+
+        // Update component state
         setStatus(response.status);
         setData(data);
       } catch (err) {
