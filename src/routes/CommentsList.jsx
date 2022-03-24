@@ -1,7 +1,13 @@
+import CommentInput from "./CommentInput";
+
 function CommentsList(props) {
   return (
     <div className='bg-light rounded p-3'>
       <h5 className='fw-bold'>Comments</h5>
+      <hr></hr>
+      <p><strong>Add a comment</strong></p>
+      <CommentInput />
+      <hr></hr>
       <dl className='list-group'>
         {
           props.comments.length ?
