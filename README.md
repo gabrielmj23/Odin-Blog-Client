@@ -2,7 +2,7 @@
 
 This site serves as the client frontend for the Odin Blog API, made for The Odin Project. 
 
-Made with React through Create React App. You can visite the website [here](https://gabrielmj23.github.io/odin-blog-client).
+Made with React through Create React App. You can visite the website [here]().
 
 API repo is [here](https://github.com/gabrielmj23/Odin-Blog-API)!
 
