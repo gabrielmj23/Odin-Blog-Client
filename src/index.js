@@ -6,6 +6,7 @@ import './index.css';
 // Components
 import App from './App';
 import PostsList from './routes/PostsList';
+import Post from './routes/Post';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -17,6 +18,7 @@ ReactDOM.render(
           <Route index element={
             <main> <PostsList /> </main>
           } />
+          <Route path='/posts/:postId' element={<Post />} />
           <Route path='*' element={
             <main className='mt-5 text-center'>
               <h4>There's nothing here.</h4>
