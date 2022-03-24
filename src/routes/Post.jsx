@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import CommentsList from './CommentsList';
 
 function Post() {
   const params = useParams();
@@ -27,7 +28,7 @@ function Post() {
     }
 
     fetchPost();
-  }, []);
+  }, [params.postId]);
 
   if (data.length < 1) {
     // Still fetching data
@@ -49,7 +50,7 @@ function Post() {
           <div className='col-2'></div>
 
           <div className='col-8'>
-            <div className='bg-light rounded p-3'>
+            <div className='bg-light rounded p-3 mb-4'>
               <h2 className='text-center fw-bold'>{data.post.title}</h2>
               <h5 className='text-center'>By {data.post.author}</h5>
               <hr></hr>
@@ -63,6 +64,7 @@ function Post() {
                 })
               }</p>
             </div>
+            <CommentsList comments={data.post.comments} />
           </div>
 
           <div className='col-2'></div>
