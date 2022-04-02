@@ -19,16 +19,28 @@ function ListGroup(props) {
     return (
       <dl className='list-group mt-5 text-start'>
         {
-          props.data.posts.map((post) => (
+          props.data.posts.map((post) => post.visible ?
+          (
             <div className='list-group-item' key={post._id}>
               <dt>
                 <Link to={`/posts/${post._id}`}>
                   <h5 className='fw-bold'>{post.title}</h5>
                 </Link>
               </dt>
-              <dd>{post.description} - by <strong>{post.author}</strong></dd>
+              <dd>
+                <p>{post.description} - by <strong>{post.author}</strong></p>
+                <p className='text-muted'>Posted on {
+                  new Date(post.timestamp).toLocaleDateString('en-us', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                  })
+                }</p>
+              </dd>
             </div>
-          ))
+          ) :
+          null)
         }
       </dl>
     );
