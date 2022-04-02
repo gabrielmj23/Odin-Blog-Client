@@ -6,4 +6,4 @@ Made with React through Create React App. You can visite the website [here](http
 
 API repo is [here](https://github.com/gabrielmj23/Odin-Blog-API)!
 
-CMS frontend is currently in development! ⏱
+CMS website is live on [Vercel](https://odin-blog-cms.vercel.app/)!
